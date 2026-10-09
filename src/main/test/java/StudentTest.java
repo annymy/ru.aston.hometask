@@ -16,7 +16,7 @@ public class StudentTest {
     }
 
     @Test
-    public void studentShoulSupportEmptyList(){
+    public void studentShouldSupportEmptyList(){
         Student student = new Student("Anna", List.of());
 
         assertNotNull(student.getBooks());

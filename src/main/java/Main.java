@@ -14,7 +14,7 @@ public class Main {
 
            findYear(students).ifPresentOrElse(
                    System.out::println,
-                   ()-> System.out.println("Книга не найдена!")
+                   ()-> System.out.println("Book not found")
            );
         }
     }
