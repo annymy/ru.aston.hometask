@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class BookTest {
     @Test
-    public void bookWithSameTitleAndAuthorShouldBeEqual(){
+    public void sameBooksShouldBeEqual(){
         Book first = new Book("Title", "Author A", 200, 2020);
-        Book second = new Book("Title", "Author A", 500, 2000);
+        Book second = new Book("Title", "Author A", 200, 2020);
 
         assertEquals(first, second);
     }
@@ -20,15 +20,15 @@ public class BookTest {
     @Test
     public void bookWithDifferentTitleNotBeEqual(){
         Book first = new Book("Title A", "Author A", 200, 2020);
-        Book second = new Book("Title B", "Author A", 500, 2000);
+        Book second = new Book("Title B", "Author A", 200, 2020);
 
         assertNotEquals(first, second);
     }
 
     @Test
-    public void bookWithDifferentAuthorNotBeEqual(){
+    public void differentBooksNotBeEqual(){
         Book first = new Book("Title A", "Author A", 200, 2020);
-        Book second = new Book("Title A", "Author B", 500, 2000);
+        Book second = new Book("Title B", "Author B", 200, 2020);
 
         assertNotEquals(first, second);
     }
@@ -36,16 +36,16 @@ public class BookTest {
     @Test
     public void equalBookHasEqualHashCode(){
         Book first = new Book("Title", "Author A", 200, 2020);
-        Book second = new Book("Title", "Author A", 500, 2000);
+        Book second = new Book("Title", "Author A", 200, 2020);
 
         assertEquals(first.hashCode(), second.hashCode());
     }
 
     @Test
-    public void hashSetShouldKeepOnlyBookWithSameTitleAndAuthor(){
+    public void hashSetShouldKeepOnlySameBooks(){
         Set<Book> books = new HashSet<>();
         books.add(new Book("Title A", "Author A", 200, 2020));
-        books.add(new Book("Title A", "Author A", 600, 2000));
+        books.add(new Book("Title A", "Author A", 200, 2020));
         books.add(new Book("Title A", "Author B", 500, 2000));
 
         assertEquals(2, books.size());

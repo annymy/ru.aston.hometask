@@ -35,10 +35,8 @@ public class Book implements Comparable<Book>{
 
     @Override
     public String toString() {
-        return "Book " + title  +
-                " " + author +
-                " " + pages + " стр. " +
-                year + " год";
+        return String.format("\"%s\" - %s (%d стр., %d г.)",
+                title, author, pages, year);
     }
 
     @Override
@@ -47,14 +45,14 @@ public class Book implements Comparable<Book>{
     }
 
     @Override
-    public boolean equals(Object o) { //в задании не было сказано, по каким полям сравнивать. для меня важны только автор и название
+    public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(author, book.author);
+        return pages == book.pages && year == book.year && Objects.equals(title, book.title) && Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, author);
+        return Objects.hash(title, author, pages, year);
     }
 }
