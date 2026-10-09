@@ -10,8 +10,8 @@ public class StreamTest {
 
     @Test
     public void shouldIgnoreBooksEarly2000(){
-        Book book1 = new Book("Title1", "Author1", 200, 1999);
-        Book book2 = new Book("Title2", "Author2", 300, 2001);
+        Book book1 = new Book("Title 1", "Author 1", 200, 1999);
+        Book book2 = new Book("Title 2", "Author 2", 300, 2001);
 
         Student student = new Student("Anna", List.of(book1, book2));
 
@@ -22,8 +22,8 @@ public class StreamTest {
 
     @Test
     public void shouldReturnEmptyWhenAllBooksEarly2000(){
-        Book book1 = new Book("Title1", "Author1", 200, 1999);
-        Book book2 = new Book("Title2", "Author2", 300, 1998);
+        Book book1 = new Book("Title 1", "Author 1", 200, 1999);
+        Book book2 = new Book("Title 2", "Author 2", 300, 1998);
 
         Student student = new Student("Anna", List.of(book1, book2));
 
